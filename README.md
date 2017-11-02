@@ -16,7 +16,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false  add_index user, :name|
+|name|string|null: false  add_index user, :name, unique: true|
 |email|varchar(50)|:email, unique:true|
 ### Association
 - has_many :messages
@@ -27,7 +27,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|text|null: false, unique: true|
 ### Association
 - has_many :users, through: :user_groups
 - has_many :messages
