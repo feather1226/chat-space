@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-public/
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -16,3 +15,9 @@ public/
 
 # Ignore Byebug command history file.
 .byebug_history
+
+public/
+.gz
+.woff2
+.eot
+.ttf
