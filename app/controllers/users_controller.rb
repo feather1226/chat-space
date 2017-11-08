@@ -4,18 +4,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(tweet_params)
+    if @user.update(users_params)
       render "messages/index"
     else
       render :edit
     end
   end
   private
-  def tweet_params
+  def users_params
      params.permit(:name, :email)
   end
 
-  def initialize
+  def set_user
     @user = User.find(params[:id])
   end
 end
