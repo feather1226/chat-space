@@ -1,0 +1,151 @@
+// .top{ 後で実装する
+//   background-color: $mainBlueColor;
+//   height:35px;
+//   width:100%;
+//   color:white;
+//   text-align:center;
+// }
+
+.LeftContents{ //左カラム
+  width:300px;
+  height:100vh;
+  float:left;
+  &__Top{
+    background-color: #253141;
+    height:15%;
+    width:100%;
+  }
+    &__Awesome{ //アイコンフォント
+      line-height: 100px;
+      float:right;
+      padding-right: 20px;
+      &--Pencil{
+        padding-right: 5px;
+      }
+      &--Gear{
+        margin-right: 10px;
+      }
+    }
+      &__Username{
+      font-size:16px;
+      font-style:bold;
+      color: $nameColor;
+      line-height: 100px;
+      width:100%;
+      margin:0 0 0 20px;
+  }
+  &__Bottom{
+    background-color:#2f3e51;
+    height: 85%;
+    color: $nameColor;
+    padding-left:20px;
+      &--topthread{
+      display:block;
+      padding-top:20px;
+      font-size:15px;
+      }
+      &--lated{
+        display:block;
+        padding-top:5px;
+        font-size:11px;
+      }
+      &--thread{
+        display:block;
+        padding-top: 40px;
+        font-size:15px;
+      }
+    }
+  }
+
+.RightContents{ //右カラム
+  height: calc(100vh - 35px);
+  width: calc(100vw - 300px);
+  float:right;
+  &__Top{
+    height:15%;
+    background-color: white;
+    border-bottom: 3px solid;
+    border-color: #eeeeee;
+    &--Edit--Self{
+      color:$mainBlueColor;
+      float:right;
+      border:2px solid;
+      font-size:14px;
+      padding:10px 20px;
+      margin:28px 40px 0 0;
+    }
+    &--word1{
+     display:block;
+     padding-left:40px;
+     padding-top:35px;
+     font-size: 20px;
+     color:#333333;
+    }
+    &--word2{
+     display:block;
+     padding-left:40px;
+     font-size:12px;
+     color:$subTextColor;
+     padding-top:15px;
+    }
+  }
+  &__Bottom{
+    height: calc(85% - 58px);
+    background-color: #F5F5F5;
+    &--user{
+      display: inline-block;
+      padding:46px 0 10px 40px;
+      font-size:16px;
+    }
+    &--date{
+      display:inline-block;
+      color:$subTextColor;
+      font-size:12px;
+      padding-left:10px;
+    }
+    &--message{
+      display:block;
+      font-size:14px;
+      padding-left:40px;
+    }
+
+ &--Mbox{ //投稿ボックス
+     background-color: lightgray;
+     height: 50px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     padding-left: 40px;
+     float: left;
+   &--inputword{
+     background-color: white;
+     color: #434a54;
+     font-size: 16px;
+     padding: 13px 0 13px 10px;
+     width: 927px;
+     float: left;
+    }
+    &--Send{
+      background-color: #38aef0;
+      color: white;
+      height: 30px;
+      width: 50px;
+      padding: 12px 59px 35px 15px;
+      margin:0 40px 0 15px;
+      float: right;
+      }
+    &--Awesome{
+      background-color: white;
+      padding:15px 10px 0 0;
+      height: 35px;
+      float: right;
+      }
+    }
+  }
+}
+
+.fa{ // フォントアイコンの色指定
+color: #FFF;
+    &.fa-picture-o{
+    color:black;
+  }
+}

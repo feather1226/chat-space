@@ -15,3 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+public/
+.gz
+.woff2
+.eot
+.ttf
