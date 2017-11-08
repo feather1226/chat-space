@@ -7,7 +7,7 @@
     .LeftContents__Awesome
       = link_to root_path, class:'LeftContents__Awesome--Pencil' do
         %i.fa.fa-pencil-square-o
-      = link_to root_path, class:'LeftContents__Awesome--Gear' do
+      = link_to edit_user_path(current_user.id), class:'LeftContents__Awesome--Gear' do
         %i.fa.fa-cog
     .LeftContents__Username Torimura
   .LeftContents__Bottom
