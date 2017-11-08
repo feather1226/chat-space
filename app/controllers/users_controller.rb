@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update]
 
   def edit
   end
@@ -10,7 +11,9 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
   private
+  
   def users_params
      params.permit(:name, :email)
   end
