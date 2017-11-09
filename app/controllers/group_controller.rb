@@ -1,4 +1,4 @@
 class GroupController < ApplicationController
-  def new_chat_group
+  def index
   end
 end
