@@ -1,16 +1,5 @@
-.LeftContents
-  .LeftContents__Top
-    .LeftContents__Awesome
-      = link_to new_group_path, class:'LeftContents__Awesome--Pencil' do
-        %i.fa.fa-pencil-square-o
-      = link_to edit_user_path(current_user.id), class:'LeftContents__Awesome--Gear' do
-        %i.fa.fa-cog
-    .LeftContents__Username Torimura
-  .LeftContents__Bottom
-    - @groups.each do |group|
-      .LeftContents__Bottom--groupname
-        = group.name
-
+%body
+  =render partial: "groups/LeftContents"
 .RightContents
   .RightContents__Top
     = link_to "Edit",root_path,class:'RightContents__Top--Edit--Self Edit'
