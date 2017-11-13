@@ -4,7 +4,8 @@
     .chat-group-form__errors
       - if @group.errors.any?
         %h2
-          1件のエラーが発生しました。グループ名を入力してください。
+          = @group.errors.count
+          件のエラーが発生しました。グループ名を入力してください。
       .chat-group-form__field.clearfix
         .chat-group-form__field--left
           = f.label "グループ名", class: "chat-group-form__label"
