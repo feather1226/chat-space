@@ -7,12 +7,9 @@
         %i.fa.fa-cog
     .LeftContents__Username Torimura
   .LeftContents__Bottom
-    %span.LeftContents__Bottom--topthread スレッド１
-    %span.LeftContents__Bottom--lated 最新メッセージ１
-    %span.LeftContents__Bottom--thread スレッド２
-    %span.LeftContents__Bottom--lated 最新メッセージ２
-    %span.LeftContents__Bottom--thread スレッド３
-    %span.LeftContents__Bottom--lated 最新メッセージ３
+    - @groups.each do |group|
+      .LeftContents__Bottom--groupname
+        = group.name
 
 .RightContents
   .RightContents__Top
