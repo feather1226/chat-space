@@ -5,7 +5,8 @@
         %i.fa.fa-pencil-square-o
       = link_to edit_user_path(current_user.id), class:'LeftContents__Awesome--Gear' do
         %i.fa.fa-cog
-    .LeftContents__Username Torimura
+    .LeftContents__Username
+      = current_user.name
   .LeftContents__Bottom
     - @groups.each do |group|
       .LeftContents__Bottom--groupname
