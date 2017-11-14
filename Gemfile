@@ -58,3 +58,7 @@ gem "font-awesome-rails"
 group :development, :test, :production do
   gem 'devise'
 end
+
+gem 'pry-rails'
+gem 'carrierwave'
+gem 'mini_magick'
