@@ -2,24 +2,31 @@
   =render partial: "groups/LeftContents"
 .RightContents
   .RightContents__Top
-    = link_to "Edit",root_path,class:'RightContents__Top--Edit--Self Edit'
-    %span.RightContents__Top--word1  sampleグループ
-    %span.RightContents__Top--word2 Member: Torimura
+    .RightContents__Top--Edit--Self
+      Edit
+    %span.RightContents__Top--word1
+      = @group.name
+    %span.RightContents__Top--word2
+      member:
+      -@group.users.each do |member|
+        = member.name
   .RightContents__Bottom
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:07
-    %span.RightContents__Bottom--message メッセージ１
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:14
-    %span.RightContents__Bottom--message メッセージ２
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:14
-    %span.RightContents__Bottom--message メッセージ３
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:19
-    %span.RightContents__Bottom--message メッセージ４
+    - @messages.each do |message|
+      .RightContents__Bottom--word
+        %span.RightContents__Bottom--word--name
+          = message.user.name
+        %span.RightContents__Bottom--word--time
+          = message.created_at
+        -if message.image.present?
+          %span.RightContents__Bottom--word--pic
+            = image_tag message.image, alt:"picture", height: "50", width: "50"
+        -if message.body.present?
+          %span.RightContents__Bottom--word--text
+            = message.body
   .RightContents__Bottom--Mbox
-    %input{type:'submit', class:'RightContents__Bottom--Mbox--Send', value:"Send"}
-    = link_to root_path,class:'RightContents__Bottom--Mbox--Awesome' do
-      %i.fa.fa-picture-o
-    %input{type:'text', class:"RightContents__Bottom--Mbox--inputword", placeholder: "type a message"}
+    = form_for [@group, @message] do |f|
+      =f.text_field :body, placeholder: "type a message", type: "text", class:"RightContents__Bottom--Mbox--inputword"
+      =f.submit "data-disable-with":"Wait", class:"RightContents__Bottom--Mbox--Send", value:"Send"
+      =f.label :image do
+        %i.fa.fa-picture-o
+          =f.file_field :image, class:"RightContents__Bottom--Mbox--Awesome"

@@ -9,5 +9,8 @@
       = current_user.name
   .LeftContents__Bottom
     - @groups.each do |group|
-      .LeftContents__Bottom--groupname
-        = group.name
+      %a.LeftContents__Bottom--groupname
+        =link_to group_messages_path(group) do
+          = group.name
+        .LeftContents__Bottom--groupname--message
+          = hot_message(group)
