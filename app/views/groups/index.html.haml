@@ -1,25 +1,3 @@
 %body
   =render partial: "LeftContents"
 .RightContents
-  .RightContents__Top
-    = link_to "Edit",root_path,class:'RightContents__Top--Edit--Self Edit'
-    %span.RightContents__Top--word1  sampleグループ
-    %span.RightContents__Top--word2 Member: Torimura
-  .RightContents__Bottom
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:07
-    %span.RightContents__Bottom--message メッセージ１
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:14
-    %span.RightContents__Bottom--message メッセージ２
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:14
-    %span.RightContents__Bottom--message メッセージ３
-    %span.RightContents__Bottom--user Torimura
-    %span.RightContents__Bottom--date 2016/10/02 06:27:19
-    %span.RightContents__Bottom--message メッセージ４
-  .RightContents__Bottom--Mbox
-    %input{type:'submit', class:'RightContents__Bottom--Mbox--Send', value:"Send"}
-    = link_to root_path,class:'RightContents__Bottom--Mbox--Awesome' do
-      %i.fa.fa-picture-o
-    %input{type:'text', class:"RightContents__Bottom--Mbox--inputword", placeholder: "type a message"}
