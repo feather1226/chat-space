@@ -244,7 +244,7 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.2)
-  devise
+  devise (= 4.3.0)
   erb2haml
   factory_girl_rails (~> 4.4.1)
   faker
