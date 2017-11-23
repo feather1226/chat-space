@@ -59,11 +59,13 @@ gem 'erb2haml'
 gem "font-awesome-rails"
 
 group :development, :test, :production do
-  gem 'devise'
+  gem 'devise', '4.3.0'
 end
 
 group :test do
   gem 'faker'
+  gem 'rails-controller-testing'
+
 end
 
 gem 'pry-rails'
