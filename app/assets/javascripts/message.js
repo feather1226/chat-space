@@ -1,7 +1,8 @@
 $(function(){
   function buildHTML(message){
     var message_list = $(".RightContents__Bottom");
-    var put_image = `<div class = RightContents__Bottom--word>
+    var put_image = `
+    <div class = RightContents__Bottom--word>
       <span class = RightContents__Bottom--word--name>
         ${ message.username }
       </span>
@@ -10,8 +11,10 @@ $(function(){
       </span>
       <span class = RightContents__Bottom--word--pic>
         image_tag ${ message.image }, alt:"picture", height: "50", width: "50"
-      </span></div>`
-    var put_text =  `<div class = RightContents__Bottom--word>
+      </span>
+    </div>`
+    var put_text = `
+    <div class = RightContents__Bottom--word>
       <span class = RightContents__Bottom--word--name>
         ${ message.username }
       </span>
@@ -20,7 +23,8 @@ $(function(){
       </span>
       <span class = RightContents__Bottom--word--text>
         ${ message.body }
-      </span></div>`
+      </span>
+    </div>`
       if ( message.body === null ) {
         message_list.append(put_image)
       };
@@ -28,6 +32,7 @@ $(function(){
         message_list.append(put_text);
       }
     }
+
     function flash() {
       var html = '<div class="flash flash__notice"><span class = sentence>メッセージを送信しました</span></div>'
       $('body').append(html);
@@ -36,6 +41,7 @@ $(function(){
        $('.flash').remove();
       },2500);
     };
+
     $('#new_message').on('submit', function(e){
       e.preventDefault();
       var formData = new FormData(this);
@@ -51,8 +57,7 @@ $(function(){
         })
         .done(function(data){
           buildHTML(data);
-          $('.RightContents__Bottom--Mbox--inputword').val('');
-          $('.RightContents__Bottom--Mbox--Awesome').val('');
+          $('.RightContents__Bottom--Mbox--inputword', '.RightContents__Bottom--Mbox--Awesome').val('');
           flash();
           $('.RightContents__Bottom--Mbox--Send').on('click', function() {
           $('.RightContents__Bottom').animate({scrollTop: 10000000 }, 'fast');
