@@ -164,9 +164,19 @@ text-decoration:none;
 
 #message_body{
   border:none;
-  margin-top:20px;
+  margin-top:10px;
   float:left;
   display:block;
   margin-left:10px;
   outline:0;
+}
+.flash__notice{
+  background-color: $mainBlueColor;
+  height:40px;
+  position:relative;
+}
+.sentence{
+  position: absolute;
+  top:10px;
+  left:560px;
 }

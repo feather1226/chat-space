@@ -24,7 +24,7 @@
           %span.RightContents__Bottom--word--text
             = message.body
   .RightContents__Bottom--Mbox
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {id: "new_message"} do |f|
       =f.text_field :body, placeholder: "type a message", type: "text", class:"RightContents__Bottom--Mbox--inputword"
       =f.submit "data-disable-with":"Wait", class:"RightContents__Bottom--Mbox--Send", value:"Send"
       =f.label :image do
