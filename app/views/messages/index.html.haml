@@ -12,7 +12,7 @@
         = member.name
   .RightContents__Bottom
     - @messages.each do |message|
-      .RightContents__Bottom--word
+      .RightContents__Bottom--word{ "data-message-id": "#{message.id}"}
         %span.RightContents__Bottom--word--name
           = message.user.name
         %span.RightContents__Bottom--word--time
