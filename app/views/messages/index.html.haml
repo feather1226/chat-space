@@ -19,7 +19,7 @@
           = message.created_at
         -if message.image.present?
           %span.RightContents__Bottom--word--pic
-            = image_tag message.image, alt:"picture", height: "50", width: "50"
+            = image_tag message.image, height: "50", width: "50", alt:"picture"
         -if message.body.present?
           %span.RightContents__Bottom--word--text
             = message.body
