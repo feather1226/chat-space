@@ -12,14 +12,14 @@
         = member.name
   .RightContents__Bottom
     - @messages.each do |message|
-      .RightContents__Bottom--word
+      .RightContents__Bottom--word{ "data-message-id": "#{message.id}"}
         %span.RightContents__Bottom--word--name
           = message.user.name
         %span.RightContents__Bottom--word--time
           = message.created_at
         -if message.image.present?
           %span.RightContents__Bottom--word--pic
-            = image_tag message.image, alt:"picture", height: "50", width: "50"
+            = image_tag message.image, height: "50", width: "50", alt:"picture"
         -if message.body.present?
           %span.RightContents__Bottom--word--text
             = message.body
